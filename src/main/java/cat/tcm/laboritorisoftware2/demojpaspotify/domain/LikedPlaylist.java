@@ -5,13 +5,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
 @ToString
 @Entity
-public class LikedPlaylist extends ActionEntity {
-    @ManyToOne
-    private PlayList playList;
+public class LikedPlaylist extends ActionEntity<PlayList> {
 }

@@ -12,11 +12,13 @@ import java.time.LocalDateTime;
 @ToString
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class ActionEntity {
+public abstract class ActionEntity<T> {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private LocalDateTime date;
     @ManyToOne
     private User user;
+    @ManyToOne
+    private T entity;
 }
